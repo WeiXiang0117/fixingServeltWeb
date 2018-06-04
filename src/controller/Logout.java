@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
-    urlPatterns={"/logout"}, 
+    urlPatterns={"/logout"},
     initParams={
-        @WebInitParam(name = "LOGIN_PATH", value = "/gossip")
+        @WebInitParam(name = "LOGIN_PATH", value = "/controller")
     }
 )
 public class Logout extends HttpServlet {
     protected void doGet(
-            HttpServletRequest request, HttpServletResponse response) 
+            HttpServletRequest request, HttpServletResponse response)
                           throws ServletException, IOException {
-        request.getSession().invalidate(); 
+        request.getSession().invalidate();
         response.sendRedirect(getInitParameter("LOGIN_PATH"));
     }
 }

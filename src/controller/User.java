@@ -15,24 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet(
-    urlPatterns={"/user/*"}, 
+    urlPatterns={"/user1/*"},
     initParams={
         @WebInitParam(name = "USER_PATH", value = "/WEB-INF/jsp/user.jsp")
     }
 )
 public class User extends HttpServlet {
     protected void doGet(
-                HttpServletRequest request, HttpServletResponse response) 
+                HttpServletRequest request, HttpServletResponse response)
                         throws ServletException, IOException {
 
         String username = getUsername(request);
         UserService userService = (UserService) getServletContext().getAttribute("userService");
-        
+
         List<Message> messages = userService.messages(username);
-        
+
         request.setAttribute("messages", messages);
         request.setAttribute("username", username);
-        
+
         request.getRequestDispatcher(getInitParameter("USER_PATH"))
                .forward(request, response);
     }

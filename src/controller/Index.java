@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("")
+@WebServlet("/index")
 public class Index extends HttpServlet {
     protected void doGet(
-            HttpServletRequest request, HttpServletResponse response) 
+            HttpServletRequest request, HttpServletResponse response)
                     throws ServletException, IOException {
-        
+
         request.getRequestDispatcher("/WEB-INF/jsp/index.jsp")
                .forward(request, response);
     }

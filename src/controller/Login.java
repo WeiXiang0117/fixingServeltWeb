@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet(
-    urlPatterns={"/login"}, 
+    urlPatterns={"/login1"},
     initParams={
         @WebInitParam(name = "SUCCESS_PATH", value = "member"),
         @WebInitParam(name = "ERROR_PATH", value = "/WEB-INF/jsp/index.jsp")
@@ -23,13 +23,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Login extends HttpServlet {
 
     protected void doPost(
-            HttpServletRequest request, HttpServletResponse response) 
+            HttpServletRequest request, HttpServletResponse response)
                             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+
         UserService userService = (UserService) getServletContext().getAttribute("userService");
-        
+
         if(userService.login(username, password)) {
             if(request.getSession(false) != null) {
                 request.changeSessionId();
@@ -41,6 +41,6 @@ public class Login extends HttpServlet {
             request.getRequestDispatcher(getInitParameter("ERROR_PATH"))
                    .forward(request, response);
         }
-        
+
     }
 }

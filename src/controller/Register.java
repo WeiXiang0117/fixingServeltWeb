@@ -16,21 +16,21 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet(
-    urlPatterns={"/register"}, 
+    urlPatterns={"/register"},
     initParams={
         @WebInitParam(name = "SUCCESS_PATH", value = "/WEB-INF/jsp/register_success.jsp"),
         @WebInitParam(name = "FORM_PATH", value = "/WEB-INF/jsp/register.jsp")
     }
 )
 public class Register extends HttpServlet {
-    
+
     private final Pattern emailRegex = Pattern.compile(
         "^[_a-z0-9-]+([.][_a-z0-9-]+)*@[a-z0-9-]+([.][a-z0-9-]+)*$");
 
     private final Pattern passwdRegex = Pattern.compile("^\\w{8,16}$");
-    
+
     private final Pattern usernameRegex = Pattern.compile("^\\w{1,16}$");
-    
+
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)
                  throws ServletException, IOException {
@@ -45,7 +45,7 @@ public class Register extends HttpServlet {
         String password = request.getParameter("password");
         String password2 = request.getParameter("password2");
 
-        List<String> errors = new ArrayList<>(); 
+        List<String> errors = new ArrayList<>();
         if (!validateEmail(email)) {
             errors.add("未填寫郵件或格式不正確");
         }
@@ -55,12 +55,12 @@ public class Register extends HttpServlet {
         if (!validatePassword(password, password2)) {
             errors.add("請確認密碼符合格式並再度確認密碼");
         }
-        
+
         String path;
         if(errors.isEmpty()) {
             path = getInitParameter("SUCCESS_PATH");
-            
-            UserService userService = (UserService) getServletContext().getAttribute("userService");
+
+            UserService userService = new UserService(username);
             userService.tryCreateUser(email, username, password);
         } else {
             path = getInitParameter("FORM_PATH");
@@ -73,15 +73,15 @@ public class Register extends HttpServlet {
     private boolean validateEmail(String email) {
         return email != null && emailRegex.matcher(email).find();
     }
-    
+
     private boolean validateUsername(String username) {
         return username != null && usernameRegex.matcher(username).find();
     }
 
-    
+
     private boolean validatePassword(String password, String password2) {
-        return password != null && 
-               passwdRegex.matcher(password).find() && 
+        return password != null &&
+               passwdRegex.matcher(password).find() &&
                password.equals(password2);
     }
 }

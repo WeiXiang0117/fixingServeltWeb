@@ -1,15 +1,15 @@
-<%@page import="java.util.List, model.Message"%>
+<%@page import="java.util.List, model.Message" contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset='UTF-8'>
 <title>Gossip 微網誌</title>
-<link rel='stylesheet' href='../css/member.css' type='text/css'>
+<link rel='stylesheet' href='../../gossip/css/member.css' type='text/css'>
 </head>
 <body>
 
     <div class='leftPanel'>
-        <img src='../images/caterpillar.jpg' alt='Gossip 微網誌' /><br>
+        <img src='../../gossip/images/caterpillar.jpg' alt='Gossip 微網誌' /><br>
         <br>${requestScope.username} 的微網誌
     </div>
     <table border='0' cellpadding='2' cellspacing='2'>
