@@ -10,7 +10,7 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         String name = request.getParameter("name");
         String passwd = request.getParameter("passwd");
 

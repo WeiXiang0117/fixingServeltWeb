@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Logout extends HttpServlet {
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)
-                          throws ServletException, IOException {
+                          throws IOException {
         request.getSession().invalidate();
         response.sendRedirect(getInitParameter("LOGIN_PATH"));
     }

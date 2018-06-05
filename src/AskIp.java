@@ -14,12 +14,12 @@ public class AskIp extends HttpServlet {
     private String askip;
 
     @Override
-    public void init() throws ServletException{
+    public void init() {
         askip = "user's ip = ";
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 
         String addr = req.getLocalAddr();
         resp.setContentType("text/html");
