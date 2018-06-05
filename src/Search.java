@@ -13,7 +13,7 @@ public class Search extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException{
+        throws IOException{
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 

@@ -12,12 +12,12 @@ public class HelloWorld extends HttpServlet {
     private String message;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         message = "Hello world, this message is from servlet!";
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         //设置响应内容类型
         resp.setContentType("text/html");
 

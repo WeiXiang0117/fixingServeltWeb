@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 )
 public class DelMessage extends HttpServlet {    
     protected void doPost(
-            HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String millis = request.getParameter("millis");
         

@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 public class UserView extends HttpServlet {
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
