@@ -2,14 +2,14 @@ package controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
+import com.sun.deploy.util.SessionProperties;
 import model.Message;
 import model.UserService;
 
@@ -19,7 +19,7 @@ import model.UserService;
         @WebInitParam(name = "MEMBER_PATH", value = "/WEB-INF/jsp/member.jsp")
     }
 )
-public class Member extends HttpServlet {
+public class Member extends HttpServlet implements HttpSessionListener{
 
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)
@@ -36,10 +36,10 @@ public class Member extends HttpServlet {
     protected void processRequest(
                 HttpServletRequest request, HttpServletResponse response)
                         throws ServletException, IOException {
-
-        UserService userService = (UserService) getServletContext().getAttribute("userService");
+//        request.getSession();
+//        String username = request.getAttribute("username").toString();
+        UserService userService = new UserService(getUsername(request));
         List<Message> messages = userService.messages(getUsername(request));
-
         request.setAttribute("messages", messages);
         request.getRequestDispatcher(getInitParameter("MEMBER_PATH")).forward(request, response);
     }

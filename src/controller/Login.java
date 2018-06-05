@@ -5,6 +5,7 @@ import model.UserService;
 import java.io.IOException;
 import java.util.Arrays;
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +29,7 @@ public class Login extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserService userService = (UserService) getServletContext().getAttribute("userService");
+        UserService userService = new UserService(username);
 
         if(userService.login(username, password)) {
             if(request.getSession(false) != null) {

@@ -35,7 +35,7 @@ public class UserService {
 
         Path profile = userhome.resolve("profile");
         try (BufferedWriter writer = Files.newBufferedWriter(profile)){
-            writer.write(String.format("%s\t%s\t$d", email, encrypt, salt));
+            writer.write(email+"\t" + encrypt+"\t" + salt);
         }
     }
 

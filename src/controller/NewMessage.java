@@ -33,7 +33,7 @@ public class NewMessage extends HttpServlet {
         }        
        
         if(blabla.length() <= 140) {
-            UserService userService = (UserService) getServletContext().getAttribute("userService");
+            UserService userService = new UserService(getUsername(request));
             userService.addMessage(getUsername(request), blabla);
             response.sendRedirect(getInitParameter("MEMBER_PATH"));
         }

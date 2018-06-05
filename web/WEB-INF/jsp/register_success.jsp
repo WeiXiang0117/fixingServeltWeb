@@ -7,6 +7,6 @@
 </head>
 <body>
 <h1>${param.username} 成功送出表單</h1>
-<a href="index.html">回首頁</a>
+<a href="index">回首頁</a>
 </body>
 </html>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(
     urlPatterns={"/logout"},
     initParams={
-        @WebInitParam(name = "LOGIN_PATH", value = "/controller")
+        @WebInitParam(name = "LOGIN_PATH", value = "/hello/index")
     }
 )
 public class Logout extends HttpServlet {

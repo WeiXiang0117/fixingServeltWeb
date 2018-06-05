@@ -1,4 +1,4 @@
-<%@page import="java.util.*,java.time.*"%>
+<%@page import="java.util.*,java.time.*" contentType="text/html;charset=UTF-8"%>
 <%@ page import="model.Message" %>
 <!DOCTYPE html>
 <html>
@@ -34,9 +34,9 @@
     </thead>
     <tbody>
 
+
     <%
-    <%
-        List<Message> messages = (List<Message>) request.getAttribute("messages");
+        List<Message> messages = new ArrayList<>();
         for(Message message : messages) {
     %>
 

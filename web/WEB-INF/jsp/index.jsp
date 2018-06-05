@@ -32,7 +32,7 @@
             }
         %>
 
-			<form method='post' action='login'>
+			<form method='post' action='login1'>
 				<table>
 					<tr>
 						<td colspan='2'>會員登入</td>
