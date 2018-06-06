@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public abstract class AbstracDao {
     final static String Driver = "org.h2.Driver";
-    final static String URI = "jdbc:h2:./testdb;DB_CLOSE_DELAY=-1";
+    final static String URI = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=runscript from \'classpath:main/resources/data.sql\'\\;runscript from \'classpath:main/resources/data2.sql\'";
     final static String USERNAME = "sa";
     final static String PASSWORD = "";
     private Connection connection=null;
-     Connection getConnection(){
+     public Connection getConnection(){
         if(connection==null){
             try {
                 Class.forName(Driver);

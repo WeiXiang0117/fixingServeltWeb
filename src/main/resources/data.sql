@@ -1,0 +1,1 @@
+create table user(user_name_ varchar,password_ varchar);
