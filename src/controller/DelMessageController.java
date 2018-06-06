@@ -25,7 +25,7 @@ public class DelMessageController extends HttpServlet {
         String millis = request.getParameter("millis");
         
         if(millis != null) {
-            UserService userService = (UserService) getServletContext().getAttribute("userService");
+            UserService userService = new UserService(getUsername(request));
             userService.deleteMessage(getUsername(request), millis);
         }
         
