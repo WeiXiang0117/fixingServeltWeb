@@ -19,7 +19,7 @@ import model.UserService;
         @WebInitParam(name = "MEMBER_PATH", value = "/WEB-INF/jsp/member.jsp")
     }
 )
-public class Member extends HttpServlet implements HttpSessionListener{
+public class MemberController extends HttpServlet implements HttpSessionListener{
 
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)

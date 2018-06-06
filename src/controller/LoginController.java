@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
         @WebInitParam(name = "ERROR_PATH", value = "/WEB-INF/jsp/index.jsp")
     }
 )
-public class Login extends HttpServlet {
+public class LoginController extends HttpServlet {
 
     protected void doPost(
             HttpServletRequest request, HttpServletResponse response)

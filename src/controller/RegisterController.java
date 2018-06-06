@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
         @WebInitParam(name = "FORM_PATH", value = "/WEB-INF/jsp/register.jsp")
     }
 )
-public class Register extends HttpServlet {
+public class RegisterController extends HttpServlet {
 
     private final Pattern emailRegex = Pattern.compile(
         "^[_a-z0-9-]+([.][_a-z0-9-]+)*@[a-z0-9-]+([.][a-z0-9-]+)*$");

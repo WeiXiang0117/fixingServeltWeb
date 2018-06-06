@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
         @WebInitParam(name = "MEMBER_PATH", value = "member")
     }
 )
-public class NewMessage extends HttpServlet {
+public class NewMessageController extends HttpServlet {
 
     protected void doPost(
             HttpServletRequest request, HttpServletResponse response) 

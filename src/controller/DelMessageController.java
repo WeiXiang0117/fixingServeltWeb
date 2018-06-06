@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
         @WebInitParam(name = "MEMBER_PATH", value = "member")
     }
 )
-public class DelMessage extends HttpServlet {    
+public class DelMessageController extends HttpServlet {
     protected void doPost(
             HttpServletRequest request, HttpServletResponse response) throws IOException {
 

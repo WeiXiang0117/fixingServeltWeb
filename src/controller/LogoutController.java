@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(
     urlPatterns={"/logout"},
     initParams={
-        @WebInitParam(name = "LOGIN_PATH", value = "/hello/index")
+        @WebInitParam(name = "LOGIN_PATH", value = "/index")
     }
 )
-public class Logout extends HttpServlet {
+public class LogoutController extends HttpServlet {
     protected void doGet(
             HttpServletRequest request, HttpServletResponse response)
                           throws IOException {

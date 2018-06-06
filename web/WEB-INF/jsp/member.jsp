@@ -36,7 +36,7 @@
 
 
     <%
-        List<Message> messages = new ArrayList<>();
+        List<Message> messages = (List<Message>) request.getAttribute("messages");
         for(Message message : messages) {
     %>
 
