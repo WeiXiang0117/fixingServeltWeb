@@ -1,5 +1,5 @@
 <%@page import="java.util.*,java.time.*" contentType="text/html;charset=UTF-8"%>
-<%@ page import="model.Message" %>
+<%@ page import="main.java.model.Message" %>
 <!DOCTYPE html>
 <html>
 <head>

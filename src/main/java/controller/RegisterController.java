@@ -1,6 +1,6 @@
-package controller;
+package main.java.controller;
 
-import model.UserService;
+import main.java.model.UserService;
 
 import java.io.IOException;
 import java.util.ArrayList;

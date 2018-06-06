@@ -1,11 +1,10 @@
-package controller;
+package main.java.controller;
 
-import model.UserService;
+import main.java.model.UserService;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;

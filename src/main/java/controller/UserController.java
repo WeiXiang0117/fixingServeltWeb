@@ -1,10 +1,9 @@
-package controller;
+package main.java.controller;
 
-        import model.Message;
-        import model.UserService;
+        import main.java.model.Message;
+        import main.java.model.UserService;
 
         import java.io.IOException;
-        import java.util.ArrayList;
         import java.util.List;
 
         import javax.servlet.ServletException;

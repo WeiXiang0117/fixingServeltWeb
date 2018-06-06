@@ -1,17 +1,15 @@
-package controller;
+package main.java.controller;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import com.sun.deploy.util.SessionProperties;
-import model.Message;
-import model.UserService;
+import main.java.model.Message;
+import main.java.model.UserService;
 
 @WebServlet(
     urlPatterns={"/member"},

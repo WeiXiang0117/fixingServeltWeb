@@ -1,4 +1,4 @@
-<%@page import="java.util.List,model.Message" contentType="text/html;charset=UTF-8"%>
+<%@page import="java.util.List,main.java.model.Message" contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
