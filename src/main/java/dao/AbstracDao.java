@@ -3,8 +3,9 @@ package main.java.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
-public abstract class AbstracDao {
+public abstract class AbstracDao<T> {
     final static String Driver = "org.h2.Driver";
     final static String URI = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=runscript from \'classpath:main/resources/data.sql\'\\;runscript from \'classpath:main/resources/data2.sql\'";
     final static String USERNAME = "sa";
@@ -22,4 +23,11 @@ public abstract class AbstracDao {
         }
         return  connection;
     }
+    public abstract T insert(T object);
+    public abstract T delete(T object);
+    public abstract T update(T object);
+    public abstract T find(T object);
+    public abstract List<T> findAll();
+
+
 }
