@@ -21,15 +21,21 @@
     </h2>
 <div align="center">
     <table border="1" cellpadding="5">
+
+        <tr><th>No</th><th>Name</th><th>Price</th><th>Category</th><th>CreateTime</th><th>DropTime</th>
+            <th>Edit</th><th>Delete</th></tr>
+
         <%
             ItemDao itemDao = new ItemDao();
             List<Iteminfo> iteminfo = itemDao.findAll();
         %>
         <tr style="color: #3333cc">
             <th><%
-                for (Iteminfo i : iteminfo){
+                for (Iteminfo i: iteminfo){
             %>
-            <td><%= i %></td>
+        <tr><td><%=i.getItemNo()%></td><td><%=i.getItemName()%></td><td><%=i.getItemPrice()%></td>
+            <td><%=i.getItemCategory()%></td><td><%=i.getItemCreateTime()%></td><td><%=i.getItemDropTime()%></td><td><a href='EditServlet?id="+e.getId()+"'>edit</a></td>
+            <td><a href='DeleteServlet?id="+e.getId()+"'>delete</a></td></tr>
             <%
                 }
             %>
